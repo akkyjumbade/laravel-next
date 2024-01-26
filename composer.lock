@@ -4,8 +4,50 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6a36486ead51ce44a5f545c01e8bf81b",
+    "content-hash": "d7bfcd41eb618d1691f07f994298da05",
     "packages": [
+        {
+            "name": "akshayjumbade/cp",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "./cp",
+                "reference": "765625d2061ddffaa0a4f12a66ead7e252e515c9"
+            },
+            "type": "library",
+            "extra": {
+                "dependencies": {
+                    "tymon/jwt-auth": {
+                        "version": "^1.0",
+                        "scripts": [
+                            "vendor:publish --provider='Tymon\\JWTAuth\\Providers\\LaravelServiceProvider'"
+                        ]
+                    }
+                },
+                "laravel": {
+                    "providers": [
+                        "CP\\ControlPanelServiceProvider",
+                        "CP\\Providers\\EventServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "CP\\": "src/"
+                }
+            },
+            "authors": [
+                {
+                    "name": "Akshay Jumbade",
+                    "email": "akkyjumbade@gmail.com"
+                }
+            ],
+            "description": "Control panel for laravel app",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
         {
             "name": "brick/math",
             "version": "0.11.0",
@@ -9200,7 +9242,7 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
