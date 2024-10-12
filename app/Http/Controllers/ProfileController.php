@@ -23,6 +23,16 @@ class ProfileController extends Controller
             'status' => session('status'),
         ]);
     }
+    /**
+     * Display the user's profile form.
+     */
+    public function settings(Request $request): Response
+    {
+        return Inertia::render('Settings', [
+            'mustVerifyEmail' => $request->user() instanceof MustVerifyEmail,
+            'status' => session('status'),
+        ]);
+    }
 
     /**
      * Update the user's profile information.
