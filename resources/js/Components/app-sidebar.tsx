@@ -6,9 +6,12 @@ import {
     Code2,
     Eclipse,
     Frame,
+    Grid2X2Icon,
     History,
     LifeBuoy,
+    LucideWalletCards,
     Map,
+    Paperclip,
     PieChart,
     Rabbit,
     Send,
@@ -32,6 +35,7 @@ import {
     SidebarItem,
     SidebarLabel,
 } from "@/components/ui/sidebar"
+import { usePage } from "@inertiajs/react"
 const data = {
     teams: [
         {
@@ -83,14 +87,40 @@ const data = {
             ],
         },
         {
-            title: "Models",
+            title: "Taxonomies",
             url: "#",
-            icon: Bot,
+            icon: LucideWalletCards,
+            isActive: false,
             items: [
                 {
-                    title: "Genesis",
+                    title: "Categories",
                     url: "#",
-                    icon: Rabbit,
+                    icon: History,
+                    description: "View your recent prompts",
+                },
+                {
+                    title: "Tags",
+                    url: "#",
+                    icon: Star,
+                    description: "Browse your starred prompts",
+                },
+                {
+                    title: "Topics",
+                    url: "/topics",
+                    icon: Settings2,
+                    description: "Configure your playground",
+                },
+            ],
+        },
+        {
+            title: "Resources",
+            url: "/cp/resources",
+            icon: Grid2X2Icon,
+            items: [
+                {
+                    title: "Posts",
+                    url: "/cp/posts",
+                    icon: Paperclip,
                     description: "Our fastest model for general use cases.",
                 },
                 {
@@ -246,6 +276,8 @@ const data = {
 }
 
 export function AppSidebar() {
+    const { props } = usePage()
+
     return (
         <Sidebar>
             <SidebarHeader>
@@ -269,7 +301,7 @@ export function AppSidebar() {
                 </SidebarItem>
             </SidebarContent>
             <SidebarFooter>
-                <NavUser user={data.user} />
+                <NavUser user={props.auth?.user} />
             </SidebarFooter>
         </Sidebar>
     )

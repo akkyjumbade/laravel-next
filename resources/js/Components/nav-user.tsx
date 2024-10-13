@@ -2,6 +2,7 @@ import {
     BadgeCheck,
     Bell,
     ChevronsUpDown,
+    CogIcon,
     CreditCard,
     LogOut,
 } from "lucide-react"
@@ -80,6 +81,12 @@ export function NavUser({
                             Account
                         </Link>
                     </DropdownMenuItem>
+                    <DropdownMenuItem asChild={true} className="gap-2">
+                        <Link href="/settings">
+                            <CogIcon className="h-4 w-4 text-muted-foreground" />
+                            Settings
+                        </Link>
+                    </DropdownMenuItem>
                     <DropdownMenuItem className="gap-2">
                         <CreditCard className="h-4 w-4 text-muted-foreground" />
                         Billing
@@ -90,9 +97,11 @@ export function NavUser({
                     </DropdownMenuItem>
                 </DropdownMenuGroup>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem className="gap-2">
-                    <LogOut className="h-4 w-4 text-muted-foreground" />
-                    Log out
+                <DropdownMenuItem className="gap-2" asChild>
+                    <Link method="post" href="/logout">
+                        <LogOut className="h-4 w-4 text-muted-foreground" />
+                        Log out
+                    </Link>
                 </DropdownMenuItem>
             </DropdownMenuContent>
         </DropdownMenu>

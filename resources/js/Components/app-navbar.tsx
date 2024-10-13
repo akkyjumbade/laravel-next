@@ -1,7 +1,8 @@
-import { ChevronLeft } from "lucide-react";
+import { BellDotIcon, ChevronLeft } from "lucide-react";
 import { PropsWithChildren } from "react";
 import { SidebarTrigger } from "./ui/sidebar";
 import { Command } from "./ui/command";
+import { Link } from "@inertiajs/react";
 
 export default function AppNavbar({ children }: PropsWithChildren) {
     return (
@@ -19,7 +20,11 @@ export default function AppNavbar({ children }: PropsWithChildren) {
                         Laravel
 
                     </div>
-                    <div className="col-span-3 flex justify-end">Logo</div>
+                    <div className="col-span-3 flex justify-end pr-3">
+                        <Link href="/notifications">
+                            <BellDotIcon className="size-5 hover:text-red-500" />
+                        </Link>
+                    </div>
                 </div>
             </div>
         </nav>
