@@ -1,5 +1,5 @@
-import * as React from "react"
-import { ChevronsUpDown, Plus } from "lucide-react"
+import { ChevronsUpDown, Plus } from 'lucide-react';
+import * as React from 'react';
 
 import {
   DropdownMenu,
@@ -9,18 +9,25 @@ import {
   DropdownMenuSeparator,
   DropdownMenuShortcut,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from '@/components/ui/dropdown-menu';
 
-export function TeamSwitcher({
-  teams,
-}: {
-  teams: {
-    name: string
-    logo: React.ElementType
-    plan: string
-  }[]
-}) {
-  const [activeTeam, setActiveTeam] = React.useState(teams[0])
+type TTeam = {
+  name: string;
+  logo: React.ElementType;
+  plan: string;
+};
+
+type Props = {
+  teams?: TTeam[] | null | undefined;
+};
+
+export function TeamSwitcher({ teams }: Props) {
+  const [activeTeam, setActiveTeam] = React.useState(() =>
+    teams?.length ? teams[0] : {},
+  );
+  if (!teams) {
+    return null;
+  }
 
   return (
     <DropdownMenu>
@@ -41,10 +48,13 @@ export function TeamSwitcher({
         side="right"
         sideOffset={4}
       >
+        <DropdownMenuItem>Access Control List</DropdownMenuItem>
+        <DropdownMenuItem>Settings</DropdownMenuItem>
+        <DropdownMenuSeparator />
         <DropdownMenuLabel className="text-xs text-muted-foreground">
           Teams
         </DropdownMenuLabel>
-        {teams.map((team, index) => (
+        {teams?.map((team, index) => (
           <DropdownMenuItem
             key={team.name}
             onClick={() => setActiveTeam(team)}
@@ -73,5 +83,5 @@ export function TeamSwitcher({
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
-  )
+  );
 }

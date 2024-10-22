@@ -11,9 +11,11 @@
         "php": "^8.2",
         "inertiajs/inertia-laravel": "^1.0",
         "laravel/framework": "^11.27",
+        "laravel/prompts": "^0.3.0",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
-        "tightenco/ziggy": "^2.0"
+        "tightenco/ziggy": "^2.0",
+        "akshayjumbade/cp": "dev-main"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -69,5 +71,14 @@
         }
     },
     "minimum-stability": "stable",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "repositories": [
+        {
+            "url": "./packages/laravel-cp",
+            "type": "path"
+        }
+    ],
+    "github-oauth": {
+        "github.com": "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"
+    }
 }

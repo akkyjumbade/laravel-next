@@ -44,7 +44,7 @@ export function NavMain({
       <li>
         <SidebarSearch results={searchResults} />
       </li>
-      {items.map((item) => (
+      {items?.map((item) => (
         <Collapsible key={item.title} asChild defaultOpen={item.isActive}>
           <li>
             <div className="relative flex items-center">
@@ -119,7 +119,7 @@ function SidebarSearch({
             </div>
           </form>
           <div className="grid gap-1 p-1.5 text-sm">
-            {results.map((result) => (
+            {results?.map((result) => (
               <Link
                 href={result.url}
                 key={result.title}
@@ -168,7 +168,7 @@ function SidebarSearch({
           </div>
         </form>
         <div className="grid gap-1 p-1.5 text-sm">
-          {results.map((result) => (
+          {results?.map((result) => (
             <Link
               href={result.url}
               key={result.title}

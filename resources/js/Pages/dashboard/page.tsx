@@ -1,5 +1,5 @@
-import AppFooter from "@/Components/app-footer"
-import AppNavbar from "@/Components/app-navbar"
+import AppFooter from "@/components/app-footer"
+import AppNavbar from "@/components/app-navbar"
 import { AppSidebar } from "@/components/app-sidebar"
 import {
     SidebarLayout,

@@ -1,9 +1,8 @@
-import DangerButton from '@/Components/DangerButton';
-import InputError from '@/Components/InputError';
-import InputLabel from '@/Components/InputLabel';
-import Modal from '@/Components/Modal';
-import SecondaryButton from '@/Components/SecondaryButton';
-import TextInput from '@/Components/TextInput';
+import InputError from '@/components/InputError';
+import Modal from '@/components/Modal';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 import { useForm } from '@inertiajs/react';
 import { FormEventHandler, useRef, useState } from 'react';
 
@@ -64,9 +63,9 @@ export default function DeleteUserForm({
                 </p>
             </header>
 
-            <DangerButton onClick={confirmUserDeletion}>
+            <Button variant='destructive' onClick={confirmUserDeletion}>
                 Delete Account
-            </DangerButton>
+            </Button>
 
             <Modal show={confirmingUserDeletion} onClose={closeModal}>
                 <form onSubmit={deleteUser} className="p-6">
@@ -82,13 +81,13 @@ export default function DeleteUserForm({
                     </p>
 
                     <div className="mt-6">
-                        <InputLabel
+                        <Label
                             htmlFor="password"
-                            value="Password"
+                            children="Password"
                             className="sr-only"
                         />
 
-                        <TextInput
+                        <Input
                             id="password"
                             type="password"
                             name="password"
@@ -98,7 +97,7 @@ export default function DeleteUserForm({
                                 setData('password', e.target.value)
                             }
                             className="mt-1 block w-3/4"
-                            isFocused
+
                             placeholder="Password"
                         />
 
@@ -109,13 +108,13 @@ export default function DeleteUserForm({
                     </div>
 
                     <div className="mt-6 flex justify-end">
-                        <SecondaryButton onClick={closeModal}>
+                        <Button variant='ghost' onClick={closeModal}>
                             Cancel
-                        </SecondaryButton>
+                        </Button>
 
-                        <DangerButton className="ms-3" disabled={processing}>
+                        <Button variant='destructive' className="ms-3" disabled={processing}>
                             Delete Account
-                        </DangerButton>
+                        </Button>
                     </div>
                 </form>
             </Modal>
