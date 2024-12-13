@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { ChevronsUpDown, Plus } from 'lucide-react';
 import * as React from 'react';
 

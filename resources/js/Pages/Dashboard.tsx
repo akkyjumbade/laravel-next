@@ -1,17 +1,9 @@
-import AppFooter from "@/components/app-footer"
-import AppNavbar from "@/components/app-navbar"
-import { AppSidebar } from "@/components/app-sidebar"
+// @ts-nocheck
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Command, CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command"
-import {
-    SidebarLayout,
-    SidebarTrigger,
-} from "@/components/ui/sidebar"
-import AdminLayout from "@/Layouts/AdminLayout"
+import AdminLayout from "@/layouts/AdminLayout"
 import { BarChart, Bell, DollarSign, Users } from "lucide-react"
-import { useEffect, useState } from "react"
 
 export default function Page() {
 

@@ -31,7 +31,7 @@ export const useMenusQuery = () =>
     queryKey: ['menus'],
     queryFn: async () => {
       return {
-        items: [
+        data: [
           {
             title: 'Taxonomies',
             url: '#',
