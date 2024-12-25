@@ -9,13 +9,13 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
-        "inertiajs/inertia-laravel": "^1.0",
+        "akshayjumbade/cp": "dev-main",
+        "inertiajs/inertia-laravel": "^2.0",
         "laravel/framework": "^11.27",
         "laravel/prompts": "^0.3.0",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
-        "tightenco/ziggy": "^2.0",
-        "akshayjumbade/cp": "dev-main"
+        "tightenco/ziggy": "^2.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -78,8 +78,11 @@
     "prefer-stable": true,
     "repositories": [
         {
-            "url": "./packages/laravel-cp",
-            "type": "path"
+            "type": "path",
+            "url": "./laravel-cp",
+            "options": {
+                "symlink": true
+            }
         }
     ],
     "github-oauth": {
